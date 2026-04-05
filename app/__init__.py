@@ -32,6 +32,7 @@ def create_app(config_class=Config):
     instance_dir.mkdir(parents=True, exist_ok=True)
 
     app = Flask(__name__, instance_path=str(instance_dir))
+    
     app.config.from_object(config_class)
     CORS(app)
 
