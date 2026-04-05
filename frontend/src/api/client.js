@@ -2,7 +2,7 @@ const TOKEN_KEY = "healbuddy_token";
 const USER_KEY = "healbuddy_user";
 
 /** Base URL: Vite dev proxy uses /api → Flask root */
-const base = "http://127.0.0.1:5000";
+const base = "https://healbuddy-backend-1yoa.onrender.com";
 
 export function getToken() {
   return localStorage.getItem(TOKEN_KEY);
