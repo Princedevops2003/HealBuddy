@@ -1,0 +1,21 @@
+# Optional: run the API locally with Docker
+# Usage: docker compose up --build
+# API: http://127.0.0.1:5000  (health: http://127.0.0.1:5000/health)
+
+services:
+  api:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      SECRET_KEY: ${SECRET_KEY:-change-me-in-production}
+      JWT_SECRET: ${JWT_SECRET:-change-me-in-production}
+      FLASK_DEBUG: "false"
+      # Optional: use PostgreSQL instead of SQLite (see .env.example)
+      # DATABASE_URL: postgresql://user:pass@db:5432/healbuddy
+    volumes:
+      # Keeps SQLite data between restarts on your machine
+      - healbuddy_instance:/app/instance
+
+volumes:
+  healbuddy_instance:

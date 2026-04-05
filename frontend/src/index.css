@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-hb-bg: #0f172a;
+  --color-hb-surface: #1e293b;
+  --color-hb-surface-2: #334155;
+  --color-hb-accent: #14b8a6;
+  --color-hb-accent-dim: #0d9488;
+  --color-hb-mint: #5eead4;
+  --color-hb-warning: #fbbf24;
+}
+
+html {
+  @apply antialiased;
+}
+
+body {
+  @apply min-h-screen bg-slate-950 font-sans text-slate-100;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgb(20 184 166 / 0.15), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgb(59 130 246 / 0.08), transparent);
+}
+
+#root {
+  @apply min-h-screen;
+}
